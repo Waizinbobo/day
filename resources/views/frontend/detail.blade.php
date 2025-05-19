@@ -1,4 +1,6 @@
-@extends('./frontend/layout/navbar')
+@extends('frontend.app')
+
+@section('content')
 <!-- Page content-->
         <div class="container mt-5">
             <div class="row">
@@ -112,4 +114,4 @@
                 </div>
             </div>
         </div>
-        @extends('./frontend/layout/footer')
+        @endsection

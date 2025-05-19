@@ -6,12 +6,52 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('frontend.detail');
 });
 
-Route::get('/detail',function(){
-    return view('detail');
+Route::get('/dashboard',function(){
+    return view('backend.index');
+});
+
+// Route::get('/dashboard/category',function(){
+//     return view('backend.category.index');
+// });
+
+Route::get('/login',function(){
+    return view('frontend.login');
+});
+
+Route::get('/register',function(){
+    return view('frontend.register');
+});
+
+Route::get('/error',function(){
+    return view('error.401');
+});
+
+Route::get('/Catlist', function(){
+    return view('backend.category.Catlist');
+});
+
+Route::get('/Catcreate', function(){
+    return view('backend.category.Catcreate');
+});
+
+Route::get('/Postlist', function(){
+    return view('backend.post.polist');
+});
+
+Route::get('/Postcreate', function(){
+    return view('backend.post.pocreate');
+});
+
+Route::get('/Userlist', function(){
+    return view('backend.user.userlist');
+});
+
+Route::get('/Usercreate', function(){
+    return view('backend.user.usercreate');
 });
 // Route::get('users', function(){
 //     return "Mg Mg";
