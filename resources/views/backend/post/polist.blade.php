@@ -19,11 +19,14 @@
                                     <th>Description</th>
                                     <th>Action</th>
                                 </thead>
+
+                                @foreach($posts as $post)
+
                                 <tr>
-                                    <td>1</td>
-                                    <td>Post Titel</td>
-                                    <td>Category-1</td>
-                                    <td>This is description.</td>
+                                    <td>{{ $post->id }} </td>
+                                    <td>{{ $post->titel }}</td>
+                                    <td>{{ $post->category_id }}</td>
+                                    <td>{{ $post->description }}</td>
                                     <td>
                                         
                                         <div class="btn btn-outline-primary" > <a href="" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
@@ -33,6 +36,8 @@
                                         <!-- <input type="submit" class="btn btn-danger fa-solid fa-trash" value="Delete"> -->
                                     </td>
                                 </tr>
+
+                                @endforeach
                                 </table>
 
                                 <nav aria-label="Page navigation example">

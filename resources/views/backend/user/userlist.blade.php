@@ -19,11 +19,12 @@
                                     <th>Password</th>
                                     <th>Action</th>
                                 </thead>
+                                @foreach($users as $user)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Mg Mg</td>
-                                    <td>Mg@gmail.com</td>
-                                    <td class="visually-hidden">Mg12345</td>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td class="visually-hidden">{{ $user->password }}</td>
                                     <td>
                                         
                                         <div class="btn btn-outline-primary" > <a href="" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
@@ -33,6 +34,7 @@
                                         <!-- <input type="submit" class="btn btn-danger fa-solid fa-trash" value="Delete"> -->
                                     </td>
                                 </tr>
+                                @endforeach
                                 </table>
 
                                 <nav aria-label="Page navigation example">

@@ -12,6 +12,5 @@ class Post extends Model
         'titel',
         'category_id',
         'description'
-
     ];
 }

@@ -4,10 +4,11 @@
 @section('content')
 <div id="layoutSidenav_content">
     <main>
-        <div class="container-fluid px-4">
+         <div class="container-fluid px-4">
                 <h1 class="mt-4 text-primary ">Category Create</h1>
 
                     <div class="shadow p-3 mb-5 bg-body rounded" >
+
 
                         
 
@@ -41,7 +42,9 @@
                             
 
                         </div>
-                    </div>
+        </div>
+
+    </main>
 
         
 
