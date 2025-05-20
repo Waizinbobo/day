@@ -12,23 +12,29 @@
                             <div class="border border-1 shadow p-3 mb-5 bg-body rounded">
                            
                                 <table class="table table-bordered">
+
+                                    
+
                                 <thead class="table-primary">
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Action</th>
                                 </thead>
+
+                                    @foreach($categories as $category)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Category</td>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
                                     <td>
                                         
-                                        <div class="btn btn-outline-primary" > <a href="" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
+                                        <div class="btn btn-outline-primary" > <a href="{{route('category.edit',$category->id)}}" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
                                         <div class="btn btn-outline-danger" > <a href="" class="text-decoration-none text-danger hover-text-white"> <i class="fa-solid fa-trash"></i> Delete</a> </div>
 
                                         <!-- <input type="submit" class="btn btn-success fa-solid fa-wrench" value="Edit"> -->
                                         <!-- <input type="submit" class="btn btn-danger fa-solid fa-trash" value="Delete"> -->
                                     </td>
                                 </tr>
+                                    @endforeach
                                 </table>
 
                                 <nav aria-label="Page navigation example">
