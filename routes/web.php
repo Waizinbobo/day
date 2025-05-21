@@ -14,11 +14,17 @@ Route::get('/',function(){
     return view('frontend.index');
 });
 
+// for category
 Route::resource('backend/category', CategoryController::class);
 
-// Route::resource('category', CategoryController::class)->names('category');
+// for post
+Route::get('post/polist', [PostController::class,'index'])->name('PostList');
+Route::get('post/create', [PostController::class,'create'])->name('Postcreate');
+Route::post('post/store',[PostController::class,'store'])->name('poststore');
 
-Route::resource('backend/post', PostController::class);
+
+
+
 
 Route::resource('backend/user', UserController::class);
 

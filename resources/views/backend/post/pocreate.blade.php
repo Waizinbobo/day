@@ -2,6 +2,10 @@
 
 
 @section('content')
+
+           
+
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
@@ -24,16 +28,22 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
+                        <label for="exampleFormControlInput2" class="form-label">Description</label>
+                        <div id="summernote"><p>Hello Summernote</p></div>
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
+                        <label for="exampleFormControlInput3" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="exampleFormControlInput3" >
+            
 
                         <input type="submit" class="btn btn-primary my-4 w-100 fw-semibold" value="Save">
 
                     </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#summernote').summernote();
+            });
+        </script>
 
         
 
