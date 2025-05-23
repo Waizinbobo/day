@@ -14,28 +14,34 @@
                     <div class="shadow p-3 mb-5 bg-body rounded" >
 
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Titel</label>
-                            <input type="Text" class="form-control" id="exampleFormControlInput1" placeholder="Post titel">
-                        </div>
+                        <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Titel</label>
+                                <input type="Text" name="titel" class="form-control" id="exampleFormControlInput1" placeholder="Post titel">
+                            </div>
 
-                        <div class="mb-3">
-                             <label for="exampleInputName" class="form-label">Category Name</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <label for="exampleFormControlInput2" class="form-label">Description</label>
-                        <div id="summernote"><p>Hello Summernote</p></div>
+                            <div class="mb-3">
+                                <label for="exampleInputName" class="form-label">Category Name</label>
+                                <select name="category"  class="form-select" id="inputGroupSelect01">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea name="description" id="summernote" class="form-control"></textarea>
+                            </div>
 
-                        <label for="exampleFormControlInput3" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="exampleFormControlInput3" >
-            
+                            <label for="exampleFormControlInput3" class="form-label">Image</label>
+                            <input type="file" name="image" class="form-control" id="exampleFormControlInput3" >
+                
 
-                        <input type="submit" class="btn btn-primary my-4 w-100 fw-semibold" value="Save">
+                            <input type="submit" class="btn btn-primary my-4 w-100 fw-semibold" value="Save">
+
+                        </form>
+                        
 
                     </div>
         </div>

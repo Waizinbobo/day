@@ -11,4 +11,9 @@ class Categories extends Model
     protected $fillable = [
         'name'
     ];
+
+    //database relationship
+    public function posts() {
+        return $this->hasMany('App\Models\Post');
+    }
 }
