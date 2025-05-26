@@ -11,7 +11,7 @@ class PostController extends Controller
     // Show the list of all posts
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('category')->paginate(5);
         return view('backend.post.polist', compact('posts'));
     }
 

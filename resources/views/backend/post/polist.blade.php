@@ -33,7 +33,7 @@
                                     </td>
                                     <td>
                                         
-                                        <div class="btn btn-outline-primary" > <a href="{{ route('post.edit', $post->id) }}" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
+                                        <div class="btn btn-outline-primary" > <a href="{{ route('post.edit', $post->id) }}" class="text-decoration-none"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
                                         <form action="{{ route('post.destroy', $post->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
@@ -48,26 +48,12 @@
                                 </tr>
 
                                 @endforeach
+                               
+
                                 </table>
-
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-end">
-                                        <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
+                             
+                                {{ $posts->links('pagination::Bootstrap-5') }}
+                               
                             </div>
 
                             
