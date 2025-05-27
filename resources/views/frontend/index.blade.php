@@ -28,25 +28,26 @@
                     </div>
                     <!-- Nested row for non-featured blog posts-->
                     <div class="row">
-                        @foreach($latest_post as $latestpost)
+                        @foreach($posts as $post)
                         <div class="col-lg-6">
                             <!-- Blog post-->
                              
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="{{ asset('storage/' . $latestpost->cover) }}" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="{{ asset('storage/' . $post->cover) }}" alt="..." /></a>
                                 <div class="card-body">
-                                    <div class="small text-muted">{{ $latestpost->created_at->diffForHumans() }}</div>
-                                    <h2 class="card-title h4">{{ $latestpost->titel }}</h2>
-                                    <p class="card-text"> <?= str::words($latestpost->description , 20 , '...') ?> </p>
-                                    <a class="btn btn-primary" href="#!">Read more →</a>
+                                    <div class="small text-muted">{{ $post->created_at->diffForHumans() }}</div>
+                                    <h2 class="card-title h4">{{ $post->titel }}</h2>
+                                    <p class="card-text"> <?= str::words($post->description , 20 , '...') ?> </p>
+                                    <a class="btn btn-primary" href="{{ route('DetailPage', $post->id) }}">Read more →</a>
                                 </div>
                             </div>
                         </div>
                         @endforeach
                         
                     </div>
+                    {{ $posts->links('pagination::Bootstrap-5') }}
                     <!-- Pagination-->
-                    <nav aria-label="Pagination">
+                    <!-- <nav aria-label="Pagination">
                         <hr class="my-0" />
                         <ul class="pagination justify-content-center my-4">
                             <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
@@ -57,7 +58,7 @@
                             <li class="page-item"><a class="page-link" href="#!">15</a></li>
                             <li class="page-item"><a class="page-link" href="#!">Older</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
                 </div>
                 <!-- Side widgets-->
                 <div class="col-lg-4">

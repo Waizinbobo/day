@@ -28,8 +28,14 @@
                                     <td>
                                         
                                         <div class="btn btn-outline-primary" > <a href="" class="text-decoration-none text-primary hover-text-white"> <i class="fa-solid fa-wrench"></i> Edit</a> </div>
-                                        <div class="btn btn-outline-danger" > <a href="" class="text-decoration-none text-danger hover-text-white"> <i class="fa-solid fa-trash"></i> Delete</a> </div>
-
+                                        <!-- <div class="btn btn-outline-danger" > <a href="" class="text-decoration-none text-danger hover-text-white"> <i class="fa-solid fa-trash"></i> Delete</a> </div> -->
+                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-outline-danger" type="submit">
+                                                <i class="fa-solid fa-trash"></i> Delete
+                                            </button>
+                                        </form>
                                         <!-- <input type="submit" class="btn btn-success fa-solid fa-wrench" value="Edit"> -->
                                         <!-- <input type="submit" class="btn btn-danger fa-solid fa-trash" value="Delete"> -->
                                     </td>
@@ -37,7 +43,9 @@
                                 @endforeach
                                 </table>
 
-                                <nav aria-label="Page navigation example">
+                                {{ $users->links('pagination::Bootstrap-5') }}
+
+                                <!-- <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-end">
                                         <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Previous">
@@ -53,7 +61,7 @@
                                         </a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </nav> -->
 
                             </div>
 

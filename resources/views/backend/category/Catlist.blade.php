@@ -43,6 +43,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $categories->links('pagination::Bootstrap-5') }}
             </div>
         </div>
     </main>
