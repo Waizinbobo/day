@@ -27,7 +27,7 @@
                                     <td>{{ $post->id }} </td>
                                     <td>{{ $post->titel }}</td>
                                     <td>{{ $post->category->name }}</td>
-                                    <td>{{ $post->description }}</td>
+                                    <td> <?= Str::words($post->description ,50,'...') ?> </td>
                                     <td>
                                         <img src="{{ asset('storage/' . $post->cover) }}" width="80">
                                     </td>

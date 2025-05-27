@@ -7,6 +7,7 @@
                 </div>
             </div>
         </header> -->
+        
         @extends('frontend.app')
 
         @section('content')
@@ -36,7 +37,7 @@
                                 <div class="card-body">
                                     <div class="small text-muted">{{ $latestpost->created_at->diffForHumans() }}</div>
                                     <h2 class="card-title h4">{{ $latestpost->titel }}</h2>
-                                    <p class="card-text">{{ $latestpost->description }}</p>
+                                    <p class="card-text"> <?= str::words($latestpost->description , 20 , '...') ?> </p>
                                     <a class="btn btn-primary" href="#!">Read more →</a>
                                 </div>
                             </div>

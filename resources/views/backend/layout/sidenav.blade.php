@@ -34,8 +34,8 @@
                                 </a>
                                 <div class="collapse" id="collapseCategory" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="/Catcreate">Create</a>
-                                        <a class="nav-link" href="/Catlist">list</a>            
+                                        <a class="nav-link" href="">Create</a>
+                                        <a class="nav-link" href="">list</a>            
                                     </nav>
                                 </div>
 
@@ -50,7 +50,7 @@
                                 <div class="collapse" id="collapsePost" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="/Postcreate">Create</a>
-                                        <a class="nav-link" href="/Postlist">list</a>            
+                                        <a class="nav-link" href="{{ route('PostList') }}">list</a>            
                                     </nav>
                                 </div>
 
