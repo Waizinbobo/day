@@ -68,8 +68,11 @@ class HomeController extends Controller
 
         if(Auth::attempt($credentials)){
             $request -> session() -> regenerate();
+            $request->session()->put('user_id', Auth::user()->id);
             return redirect() -> intended('/');
         }
+
+        return back()->withErrors(['email' => 'Invalid credentials']);
     
     }
 
