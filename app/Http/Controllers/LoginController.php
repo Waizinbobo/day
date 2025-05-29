@@ -45,9 +45,7 @@ class LoginController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'min:8', 'confirmed'],
-        ]);
-
-      
+        ]);    
 
         User::create([
             'name' => $request->name,
@@ -56,10 +54,16 @@ class LoginController extends Controller
             'is_admin' => 1, // New user is an admin
         ]);
 
-
-
         return redirect()->route('backend')->with('success', 'Admin user created successfully!');
     }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('success','You have been logout');
+    }
+
 
 
 

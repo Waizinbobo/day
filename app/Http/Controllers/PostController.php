@@ -29,7 +29,7 @@ class PostController extends Controller
         'category' => 'required|exists:categories,id',
         'description' => 'required|min:7',
         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1024'
-    ]);
+        ]);
 
 
         $imagePath = null;
@@ -77,7 +77,7 @@ class PostController extends Controller
     ]);
 
     return redirect()->route('PostList')->with('success', 'Post updated!');
-}
+    }
 
 
     public function destroy(Post $post) {

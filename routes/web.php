@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserPostController;
 use App\Models\Post;
 
 // Route::get('/backend',function(){
@@ -52,3 +53,9 @@ Route::middleware(['admin.auth'])->group(function(){
     Route::resource('backend/user', UserController::class);
 
 });
+
+//for userpost
+Route::resource('user/userpost' , UserPostController::class);
+
+//for logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
